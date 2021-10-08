@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Gate.gd" type="Script" id=1]
+[ext_resource path="res://darker.tres" type="Texture" id=2]
+[ext_resource path="res://roboti_font.tres" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="GateExample" type="TextureButton"]
+margin_left = 73.6863
+margin_top = 56.2426
+margin_right = 2121.69
+margin_bottom = 544.243
+rect_scale = Vector2( 0.088, 0.209 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 2 )
+texture_focused = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 540.0
+margin_bottom = 486.0
+rect_scale = Vector2( 3.8, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "AND"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="." to="." method="_on_GateExample_button_down"]
